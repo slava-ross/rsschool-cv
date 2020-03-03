@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML, CSS & Git Basics</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <article class="cv">
+        <div class="name">
+          <h2>Yaroslav Yagodarov</h2>
+          <img src="images/photo_resume.jpg" alt="Resume Photo">
+        </div>
+        <div class="contact">
+          <h2>Contact Info</h2>
+          <ul>
+            <li><b>Mobile:</b> +7(912)8722088</li>
+            <li><b>e-mail 1:</b> ya.yagodarov@gmail.com</li>
+            <li><b>e-mail 2:</b> slava-ross@yandex.ru</li>
+            <li><b>telegram:</b> @yagodarov</li>
+          </ul>
+        </div>
+        <div class="summary">
+          <h2>Summary</h2>
+          <p>
+            I dreamed of becoming a programmer for many years since I graduated from middle school. But I was not able to get a job as a programmer despite the fact that I studied as a system engineer later at university, because my specialization, that was <i>"computer systems and networks"</i>.
+            I've started amateur web development around 2004. It was a user accounting system, as a part of billing system for VoIP clients. It was based on HTML4, CSS2, PHP4 and PostgreSQL6.X.
+            Its interface had a terrible layout according to modern criteria and there was a misuse some of the above technologies. 
+            Later at another job, I deployed a similar system for network equipment accounting. It was slightly more complex but also imperfect due to my lack of knowledge of modern web technologies.
+            So I started taking online web development courses and fate brought me to RS-School.
+          </p>
+        </div>
+        <div class="skills">
+          <h2>Skills</h2>
+          <p>
+             I've got an entry level in following languages and technologies: HTML, CSS, JavaScript, PHP, MySQL, PostgreSQL, jQuery, Ajax, Python, Pascal and little experience in ANSI C, C++, x86, AVR, C51, Z80 assemblers that got during my hobbies.
+          </p>
+        </div>
+        <div class="code">
+          <h2>Code example</h2>
+          <pre>
+$(document).ready( function() {
+
+var v;
+var reg = 0;
+var dispReg = '0';
+var operSign = '';
+var operFlag = false;
+var actFlag = false;
+var equFlag = false;
+
+function dispOut( targetID, stringOut ) {
+    $(targetID).empty();
+    $(targetID).html( '<span>' + stringOut + '</span>' );
+}
+
+function reset() {
+    reg = 0;
+    dispReg = '0';
+    operSign = '';
+    operFlag = false;
+    actFlag = false;
+    equFlag = false;
+    dispOut( '#dispResult', dispReg );
+    dispOut( '#dispOper', operSign );
+}
+
+reset();
+
+$('#clr').click( function() {
+    reset();
+});
+
+$('#equ').click( function() {
+    reg = eval( Number( reg ) + operSign + Number( dispReg ) );
+    dispOut( '#dispResult', reg );
+    operFlag = false;
+    actFlag = false;
+    equFlag = true;
+});
+
+$('.numButton').click( function() {
+    v=$(this).attr( 'value' );
+    if ( operFlag ) {
+  actFlag = true;
+  dispReg = 0;
+    }
+    if ( equFlag ) {
+  dispReg = 0;
+    }
+    operFlag = false;
+    dispReg = dispReg * 10 + Number( v );
+    equFlag = false;
+    dispOut( '#dispResult', dispReg );
+});
+
+$('.signButton').click( function() {
+    v=$(this).attr( 'value' );
+    if ( !operFlag ) {
+  if ( actFlag ) {
+      reg = eval( Number( reg ) + operSign + Number( dispReg ) );
+      dispOut( '#dispResult', reg );
+  }
+  else {
+      if ( !equFlag ) {
+    reg = dispReg;
+      }
+  }
+  operFlag = true;
+    }
+    operSign = v;
+    equFlag = false;
+    dispOut( '#dispOper', operSign );
+});
+});
+          </pre>
+        </div>
+        <div class="experience">
+          <h2>Experience</h2>
+          <ul>
+            <li><a href="https://htmlacademy.ru/profile/id886151/progress">HtmlAcademy - Progress</a></li>
+            <li><a href="https://www.codecademy.com/profiles/SlavaRoss">CodeAcademy - Profile</a></li>
+            <li><a href="https://github.com/slava-ross/js-calc">Calculator - JavaScript</a></li>
+            <li>MVC web-application (under construction)</li>
+            <li><a href="https://github.com/slava-ross/news-mvc-user-mysql">MVC web-application with Ajax</a></li>				
+          </ul>
+        </div>
+        <div class="education">
+          <h2>Education and qualifications</h2>
+          <h3>1997 – 2002 Izhevsk State Technical University, Computer Engineering</h3>
+          <ul>
+            <li>Microprocessor technology</li>
+            <li>System programming</li>
+            <li>Data protection</li>
+            <li>Computer Networks</li>
+          </ul>
+          <p>
+            Most of my coursework was focused on Electronics, Hardware Engineering, System Programming but I minored in Economics.				
+          </p>
+          <p>
+            <b>I'm currently studying in:</b>
+          </p>
+          <ul>
+            <li><a href="https://htmlacademy.ru/profile/id886151/progress">HtmlAcademy</a></li>
+            <li><a href="https://www.training.ru/#!/Training/2355?lang=ru">EPAM Java-online courses</a></li>
+            <li><a href="https://javabegin.ru/courses/">JavaBegin courses</a></li>
+          </ul>
+        </div>
+        <div class="english">
+          <h2>English language</h2>
+          <ul>
+            <li>English lessons in school, college, university (<i>insignificant experience</i>).</li>
+            <li>Readings: in everyday tasks at past and current work places (docs reading, info searching on the Internet).</li>
+            <li>I've got pre-intermediate skill in Language Center <b>"Lingua City"</b> ( at the present time: <a href="https://cambridge-center.ru"><b>Cambridge-Center</b></a> ) in the year of 2016.</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
