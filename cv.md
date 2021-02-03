@@ -100,7 +100,7 @@ $('.signButton').click( function() {
 * [HtmlAcademy - Progress](https://htmlacademy.ru/profile/id886151/progress)
 * [CodeAcademy - Profile](https://www.codecademy.com/profiles/SlavaRoss)
 * [Calculator - JavaScript](https://github.com/slava-ross/js-calc)
-* MVC web-application (under construction)
+* [MVC web-application (Laravel PHP framework)](https://github.com/slava-ross/laravel_gtx/tree/ajax_crud)
 * [MVC web-application with Ajax](https://github.com/slava-ross/news-mvc-user-mysql) 
 
 ## Education and qualifications
